@@ -4,7 +4,7 @@ Promote a simple NGINX app through `dev → test → prod` using Kargo and Argo 
 
 ## Prerequisites
 
-- Akuity account (https://akuity.cloud) and access to the Argo CD and Kargo instances
+- Akuity account (https://training.akuity.cloud) and access to the Argo CD and Kargo instances
 - [Kind Cluster](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
 - Access to both Argo CD and Kargo Instance control planes
 - A fork of this repo in your own GitHub account
