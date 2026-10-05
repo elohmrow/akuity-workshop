@@ -37,6 +37,8 @@ Fill in `.env`. `WORKSHOP_NAME` must be **unique per participant** (for example,
 
 > Never commit `.env`. It contains your PAT.
 
+> **Shortcut:** `task setup` runs steps 3–6 in one go. We recommend going through them one by one the first time, so you see what each step creates in Argo CD and Kargo.
+
 ### 3. Log in and check your config
 
 ```bash
@@ -81,8 +83,6 @@ This applies, in order:
 | Stages | `dev → test → prod`. Each stage can only promote Freight that passed the stage before it |
 
 The pipeline is ready. Freight discovered by the Warehouse can now be promoted through the stages.
-
-> Tip: `task setup` runs steps 3–6 in one go.
 
 ### 7. Your first promotion
 
@@ -197,6 +197,13 @@ Use [`snow-update`](https://docs.kargo.io/user-guide/reference-docs/promotion-st
 ### Verify a Stage with an AnalysisTemplate
 
 Add an [`AnalysisTemplate`](https://docs.kargo.io/user-guide/reference-docs/analysis-templates) to a Stage's `verification` so Kargo runs checks after each promotion. Freight that fails verification can't move on to the next Stage.
+
+### Roll back a Stage
+
+There are two ways to go back to an earlier version:
+
+- **Manually:** promote an older Freight to the Stage again, for example by dragging it onto `prod` in the Kargo UI. Kargo runs the same PromotionTask with the older image tag, and Argo CD syncs it.
+- **Automatically:** turn on [auto-rollback](https://docs.kargo.io/user-guide/how-to-guides/working-with-projects#auto-rollback) for a Stage in your Project's `ProjectConfig`. If verification fails after a promotion, Kargo promotes the Stage back to the last Freight that passed verification. This needs verification on the Stage (see the bonus task above) and at least one earlier Freight that passed it.
 
 ### Blue-green deployments with Kargo
 
