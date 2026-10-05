@@ -37,14 +37,14 @@ Fill in `.env`. `WORKSHOP_NAME` must be **unique per participant** (for example,
 
 > Never commit `.env`. It contains your PAT.
 
-> **Shortcut:** `task setup` runs steps 3–6 in one go. We recommend going through them one by one the first time, so you see what each step creates in Argo CD and Kargo.
-
 ### 3. Log in and check your config
 
 ```bash
 akuity login
 task check
 ```
+
+> **Shortcut:** `task setup` runs steps 4–6 in one go. We recommend going through them one by one the first time, so you see what each step creates in Argo CD and Kargo.
 
 ### 4. Create the Argo CD AppProject
 
