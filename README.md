@@ -12,6 +12,8 @@ Promote a simple NGINX app through `dev → test → prod` using Kargo and Argo 
 - CLIs: [`akuity`](https://docs.akuity.io/akuity-portal/automation/#installation), [`kargo`](https://docs.akuity.io/kargo/getting-started/access-kargo-instance#access-kargo-using-the-kargo-cli), [`task`](https://taskfile.dev/docs/installation), [`envsubst`](https://formulae.brew.sh/formula/gettext)
 (`brew install akuity kargo go-task gettext`)
 
+> Tested with Argo CD `v3.5.2-ak.101` and Kargo `v1.11.4-ak.0`, both with agent `v0.5.98`.
+
 ## Step-by-Step Instructions
 
 ### 1. Create your cluster and connect the agents
